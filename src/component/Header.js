@@ -1,4 +1,5 @@
 import React from 'react'
+import {BrowserRouter as Router,Routes,Route,Link} from 'react-router-dom'
 
 export default function Header() {
   return (
@@ -6,12 +7,12 @@ export default function Header() {
               <header className="header container">
             <div className='header-main'>
                 <h1 className='header-h1'>
-                    {/* <a href="http://visvodayata.ac.in/"><img id="logo" src="http://visvodayata.ac.in/assets/images/logo.png" alt="Logo"/></a> */}
+                    {/* <a to="http://visvodayata.ac.in/"><img id="logo" src="http://visvodayata.ac.in/assets/images/logo.png" alt="Logo"/></a> */}
                 </h1> 
                     <ul className='nav header-nav'>
-                        <li className="nav-item"><a className='nav-link' href="#">Home</a></li>
-                        <li className="nav-item"><a className='nav-link' href="#">Login</a></li>
-                        <li className='nav-item'><a className='nav-link' href="#">Sign Up</a></li>
+                        <li className="nav-item"><Link className='nav-link' to="/">Login</Link></li>
+                        <li className="nav-item"><Link className='nav-link' to="/">Sign Up</Link></li>
+                        <li className='nav-item'><Link className='nav-link' to="/">Contact Us</Link></li>
                     </ul>
                     <br />
                     </div>    

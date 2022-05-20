@@ -1,41 +1,50 @@
 import React from 'react'
+import { BrowserRouter as Router,Routes,Route,Link} from 'react-router-dom'
+import Admission from './Admission'
+import Body from './Body'
 
 export default function Navbar() {
   return (
     <div>
-      <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="navbar-brand nav-item">
-          <a class="nav-link" aria-current="page" href="/">Home</a>
+      <Router>
+      <nav className="navbar navbar-expand-lg">
+  <div className="container-fluid">
+      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+      <li className="navbar-brand nav-item">
+          <Link className="nav-link" aria-current="page" to="/">Home</Link>
         </li>
-        <li class="navbar-brand nav-item">
-          <a class="nav-link" aria-current="page" href="/">Placements</a>
+        <li className="navbar-brand nav-item">
+          <Link className="nav-link" aria-current="page" to="/">Placements</Link>
         </li>
-        <li class="navbar-brand nav-item">
-          <a class="nav-link" href="/Admission">Admission</a>
+        <li className="navbar-brand nav-item">
+          <Link className="nav-link" to="/Admission">Admission</Link>
         </li>
-        <li class="navbar-brand nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li className="navbar-brand nav-item dropdown">
+          <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Departments
-          </a>
-          <ul class="navbar-brand dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/">Action</a></li>
-            <li><a class="dropdown-item" href="/">Another action</a></li>
-            <li><hr class="dropdown-divider"/></li>
-            <li><a class="dropdown-item" href="/">Something else here</a></li>
+          </Link>
+          <ul className="navbar-brand dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><Link className="dropdown-item" to="/">Action</Link></li>
+            <li><Link className="dropdown-item" to="/">Another action</Link></li>
+            <li><hr className="dropdown-divider"/></li>
+            <li><Link className="dropdown-item" to="/">Something else here</Link></li>
           </ul>
         </li>
-        <li class="navbar-brand nav-item">
-          <a class="nav-link">Careers</a>
+        <li className="navbar-brand nav-item">
+          <Link className="nav-link" to='/'>Careers</Link>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-info" type="submit">Search</button>
+      <form className="d-flex">
+        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button className="btn btn-outline-info" type="submit">Search</button>
       </form>
     </div>
 </nav>
+<Routes>
+        <Route exact path='/' element={<Body/>}/>
+        <Route path='/Admission' element={<Admission/>}/>
+      </Routes>
+</Router>
 </div>
   )
 }
